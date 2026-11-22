@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "slug": "sebou-river",
+      "title": "The Sebou River Never Gave Me an Answer",
+      "note": "Kenitra, Morocco, 2026",
+      "year": "2026",
+      "preview": "/images/sebou.jpg",
+      "images": [
+        { "image": "/images/sebou.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/stars.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" }
+      ],
+      "statement": {
+        "pages": [
+          { "text": "[First page of the statement.]" }
+        ],
+        "info": [
+          { "label": "Year", "value": "2026" },
+          { "label": "Location", "value": "Kenitra, Morocco" }
+        ],
+        "notes": []
+      }
+    },
+    {
+      "slug": "so-long",
+      "title": "So Long and Thanks for All the Fish",
+      "note": "2025",
+      "year": "2025",
+      "preview": "/images/aqua_yellow.jpg",
+      "images": [
+        { "image": "/images/aqua_yellow.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/aqua_red.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/aqua_blue.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/stars.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/aqua_blue.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/aqua_yellow.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/aqua_red.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" },
+        { "image": "/images/stars.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" }
+      ],
+      "statement": {
+        "pages": [
+          { "text": "So Long and Thanks for All the Fish was photographed at an aquarium in the gap right after I graduated, mostly with a slow shutter. [What the aquarium was to you at that moment.]\n\nThe work is sequenced in five chapters — yellow, green, red, blue, and finally black and white — each one carrying a different emotion. [Name the emotion each colour holds.]" },
+          { "text": "The book is designed in the manner of an old astronomical observation archive. [Why the archive form.]\n\n[Closing paragraph.]" }
+        ],
+        "info": [
+          { "label": "Year", "value": "2025" },
+          { "label": "Medium", "value": "Slow-shutter photographs, medium format" },
+          { "label": "Format", "value": "Photobook and e-book" },
+          { "label": "Chapters", "value": "I Yellow · II Green · III Red · IV Blue · V Black & White" }
+        ],
+        "notes": [
+          { "text": "The title is taken from Douglas Adams, *So Long, and Thanks for All the Fish* (1984)." }
+        ]
+      }
+    },
+    {
+      "slug": "love-letters",
+      "title": "Love Letters",
+      "note": "ongoing",
+      "year": "ongoing",
+      "preview": "/images/letters.jpg",
+      "images": [
+        { "image": "/images/letters.jpg", "place": "[Place]", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" }
+      ],
+      "statement": { "pages": [ { "text": "[Statement.]" } ], "info": [], "notes": [] }
+    },
+    {
+      "slug": "hohhot",
+      "title": "Hohhot",
+      "note": "working title",
+      "year": "[Year]",
+      "preview": "/images/hohhot.jpg",
+      "images": [
+        { "image": "/images/hohhot.jpg", "place": "Hohhot", "date": "[YYYY.MM.DD]", "text": "[A sentence about this image, in your own words.]" }
+      ],
+      "statement": { "pages": [ { "text": "[Statement.]" } ], "info": [], "notes": [] }
+    }
+  ]
+}

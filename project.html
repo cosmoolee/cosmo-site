@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosmo</title>
+<meta name="description" content="Cosmo (Li Yihong) — photographs, books and zines.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Montserrat:wght@400;500&family=Inter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body data-page="project">
+<div class="page">
+  <div class="emblem-wrap">
+    <a class="emblem" id="emblem" href="#" aria-label="Read the statement for this project"><img src="/images/emblem-sunflower.jpg" alt=""></a>
+  </div>
+  <header class="page-head">
+    <a class="name" id="name" href="/" aria-label="Cosmo, Li Yihong — back to index"></a>
+  </header>
+  <div class="project-title" id="title"></div>
+  <main class="grid" id="grid"></main>
+</div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <figure>
+    <button type="button" class="back" id="v-back" aria-label="Back to all images">&lt;&lt;</button>
+    <img id="v-img" src="" alt="">
+    <figcaption>
+      <p class="hand" id="v-text"></p>
+      <span class="small-caption" id="v-cap"></span>
+    </figcaption>
+  </figure>
+  <div class="pgnum" id="v-num"></div>
+  <nav class="pgnav" aria-label="Images">
+    <button type="button" id="v-prev">← Previous</button>
+    <button type="button" id="v-next">Next →</button>
+  </nav>
+</div>
+<script src="/assets/site.js"></script>
+</body>
+</html>

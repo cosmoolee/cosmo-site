@@ -1,0 +1,100 @@
+# Cosmo — 后台设置（Decap CMS）
+# 部署时只需要改下面 repo 这一行：把 YOUR-GITHUB-NAME 换成你的 GitHub 用户名。
+backend:
+  name: github
+  repo: YOUR-GITHUB-NAME/cosmo-site
+  branch: main
+
+locale: zh_Hans
+
+# 上传的图片存到网站的 images 文件夹
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: projects
+    label: 作品项目
+    editor:
+      preview: false
+    files:
+      - name: projects
+        label: 全部项目（首页 Projects 列表）
+        file: content/projects.json
+        fields:
+          - name: projects
+            label: 项目
+            label_singular: 项目
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "项目名（首页手写体显示）", widget: string }
+              - { name: slug, label: "网址名（只用小写英文和连字符，例如 so-long）", widget: string }
+              - { name: note, label: "首页斜体注释（如：Kenitra, Morocco, 2026）", widget: string, required: false }
+              - { name: year, label: "年份", widget: string, required: false }
+              - { name: preview, label: "首页悬停预览图", widget: image, required: false }
+              - name: images
+                label: 图片（按顺序显示，编号自动生成）
+                label_singular: 图片
+                widget: list
+                summary: "{{fields.place}} {{fields.date}}"
+                fields:
+                  - { name: image, label: "图片", widget: image }
+                  - { name: place, label: "拍摄地点", widget: string, required: false }
+                  - { name: date, label: "日期（如 2025.07.14）", widget: string, required: false }
+                  - { name: text, label: "单张预览时下方的手写描述", widget: text, required: false }
+              - name: statement
+                label: 阐述页（点小图进入）
+                widget: object
+                fields:
+                  - name: pages
+                    label: 阐述正文（每一项是一页；段落之间空一行）
+                    label_singular: 页
+                    widget: list
+                    fields:
+                      - { name: text, label: "这一页的文字", widget: text }
+                  - name: info
+                    label: 作品信息（最后一页）
+                    label_singular: 信息
+                    widget: list
+                    required: false
+                    fields:
+                      - { name: label, label: "名称（如 Medium）", widget: string }
+                      - { name: value, label: "内容", widget: string }
+                  - name: notes
+                    label: 脚注
+                    label_singular: 脚注
+                    widget: list
+                    required: false
+                    fields:
+                      - { name: text, label: "脚注文字（*星号之间* 显示为斜体）", widget: string }
+
+  - name: settings
+    label: 网站设置
+    editor:
+      preview: false
+    files:
+      - name: site
+        label: 名字、联系方式、小图、书籍
+        file: content/site.json
+        fields:
+          - { name: name, label: "左上角名字", widget: string }
+          - { name: pinyin, label: "名字下方拼音", widget: string }
+          - { name: email, label: "邮箱（Contact）", widget: string }
+          - { name: xiaohongshu, label: "小红书主页链接", widget: string, required: false }
+          - { name: instagram, label: "Instagram 主页链接", widget: string, required: false }
+          - { name: about, label: "About 页文字（段落之间空一行）", widget: text }
+          - name: emblems
+            label: 首页中间小图（点一下换下一张；第一张也用在其他页面）
+            label_singular: 小图
+            widget: list
+            fields:
+              - { name: image, label: "图片（建议正方形）", widget: image }
+              - { name: label, label: "说明（如项目名）", widget: string, required: false }
+          - name: books
+            label: Books & Zines 列表
+            label_singular: 书
+            widget: list
+            fields:
+              - { name: title, label: "书名", widget: string }
+              - { name: note, label: "斜体注释（如 zine, 170 × 240 mm）", widget: string, required: false }
+              - { name: project, label: "点击后跳到哪个项目（填项目的网址名，可留空）", widget: string, required: false }
