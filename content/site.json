@@ -1,19 +1,42 @@
 {
   "name": "Cosmo",
   "pinyin": "LI YIHONG",
-  "email": "your-email@example.com",
+  "email": "18201869975@163.com",
   "xiaohongshu": "https://www.xiaohongshu.com/",
   "instagram": "https://www.instagram.com/",
   "about": "[About — a short paragraph about you and your practice.]\n\n[Second paragraph, optional.]",
   "emblems": [
-    { "image": "/images/emblem-sunflower.jpg", "label": "Cover" },
-    { "image": "/images/sebou.jpg", "label": "The Sebou River Never Gave Me an Answer" },
-    { "image": "/images/aqua_yellow.jpg", "label": "So Long and Thanks for All the Fish" },
-    { "image": "/images/letters.jpg", "label": "Love Letters" },
-    { "image": "/images/hohhot.jpg", "label": "Hohhot" }
+    {
+      "image": "/images/emblem-sunflower.jpg",
+      "label": "Cover"
+    },
+    {
+      "image": "/images/sebou.jpg",
+      "label": "The Sebou River Never Gave Me an Answer"
+    },
+    {
+      "image": "/images/aqua_yellow.jpg",
+      "label": "So Long and Thanks for All the Fish"
+    },
+    {
+      "image": "/images/letters.jpg",
+      "label": "Love Letters"
+    },
+    {
+      "image": "/images/hohhot.jpg",
+      "label": "Hohhot"
+    }
   ],
   "books": [
-    { "title": "So Long and Thanks for All the Fish", "note": "photobook & e-book", "project": "so-long" },
-    { "title": "Happy Birthday", "note": "zine, 170 × 240 mm", "project": "" }
+    {
+      "title": "So Long and Thanks for All the Fish",
+      "note": "photobook & e-book",
+      "project": "so-long"
+    },
+    {
+      "title": "Happy Birthday",
+      "note": "zine, 170 × 240 mm",
+      "project": ""
+    }
   ]
 }
