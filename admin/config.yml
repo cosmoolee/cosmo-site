@@ -1,15 +1,24 @@
-# Cosmo — 后台设置（Decap CMS）
+# Cosmo — 后台设置（Sveltia CMS，兼容原来的 Decap 设置）
 # 部署时只需要改下面 repo 这一行：把 YOUR-GITHUB-NAME 换成你的 GitHub 用户名。
 backend:
   name: github
-  repo: cosmoolee/cosmo-site
+  repo: YOUR-GITHUB-NAME/cosmo-site
   branch: main
-
-locale: zh_Hans
 
 # 上传的图片存到网站的 images 文件夹
 media_folder: images
 public_folder: /images
+
+# 上传时自动处理图片：长边超过 2560 像素就等比例缩小，并转成 WebP（品质 85），
+# 所以相机原图也可以直接上传，网站上存的是约 1MB 的小图。
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 85
+        width: 2560
+        height: 2560
 
 collections:
   - name: projects
@@ -31,7 +40,8 @@ collections:
               - { name: slug, label: "网址名（只用小写英文和连字符，例如 so-long）", widget: string }
               - { name: note, label: "首页斜体注释（如：Kenitra, Morocco, 2026）", widget: string, required: false }
               - { name: year, label: "年份", widget: string, required: false }
-              - { name: preview, label: "首页悬停预览图", widget: image, required: false }
+              - { name: emblem, label: "项目页顶部中间的小图（不填就用网站默认小图）", widget: image, required: false }
+              - { name: more_images, label: "批量添加图片（可一次多选；排在下面带文字的图片之后，没有文字说明）", widget: image, multiple: true, required: false }
               - name: images
                 label: 图片（按顺序显示，编号自动生成）
                 label_singular: 图片
