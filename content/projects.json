@@ -5,8 +5,11 @@
       "title": "So Long and Thanks for All the Fish",
       "note": "Beijing, China, 2025",
       "year": "2025",
-      "preview": "/images/dscf2849.jpg",
+      "preview": "/images/dscf0552.jpg",
       "images": [
+        {
+          "image": "/images/dscf2849.jpg"
+        },
         {
           "image": "/images/dscf2906.jpg",
           "place": "[Place]",
@@ -103,11 +106,11 @@
       }
     },
     {
-      "slug": "love-letters",
-      "title": "Love Letters",
+      "slug": "buried-in-the-four-seasons",
+      "title": "My love letter is buried in the four seasons",
       "note": "ongoing",
       "year": "ongoing",
-      "preview": "/images/letters.jpg",
+      "preview": "/images/emblem-sunflower.jpg",
       "images": [
         {
           "image": "/images/letters.jpg",
@@ -128,9 +131,9 @@
     },
     {
       "slug": "hohhot",
-      "title": "Hohhot",
-      "note": "working title",
-      "year": "[Year]",
+      "title": "My life is a story of the self-realization of the unconscious",
+      "note": "Hohhot, China, 2026 ",
+      "year": "2026",
       "preview": "/images/hohhot.jpg",
       "images": [
         {
@@ -143,7 +146,7 @@
       "statement": {
         "pages": [
           {
-            "text": "[Statement.]"
+            "text": "My life is a story of the self-realization of the unconscious.\n\nFor some reason, I thought of this quote by C.G. Jung.\n\nI do not know why certain images feel familiar.\n\nA tree, a shadow, a grave, the remains of ancient life. They belong to different places and different times, yet something draws them together.\n\nI try to approach a feeling that resists explanation, as if these scenes could remember something that I cannot."
           }
         ],
         "info": [],
