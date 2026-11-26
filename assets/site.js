@@ -50,25 +50,25 @@
       emImg.src = emblems[ei].image;
       emBtn.setAttribute('aria-label', 'Change the small image (now: ' + (emblems[ei].label || '') + ')');
     }
-    emBtn.addEventListener('click', function () { ei = (ei + 1) % emblems.length; showEmblem(); });
+    // background/text colour: unchanged until the first click, then
+    // navy -> dark green -> black -> back to the original white, and repeat
+    var THEMES = ['', 'theme-navy', 'theme-green', 'theme-black'];
+    var ti = 0;
+    emBtn.addEventListener('click', function () {
+      ei = (ei + 1) % emblems.length; showEmblem();
+      if (THEMES[ti]) document.documentElement.classList.remove(THEMES[ti]);
+      ti = (ti + 1) % THEMES.length;
+      if (THEMES[ti]) document.documentElement.classList.add(THEMES[ti]);
+    });
     showEmblem();
 
     $('#contact').href = 'mailto:' + (site.email || '');
 
-    var prev = $('#preview'), prevImg = $('#preview img');
     var projects = (data.projects || []);
     $('#projects').innerHTML = projects.map(function (p, i) {
       return '<a class="item" href="/project.html?p=' + encodeURIComponent(p.slug) + '" data-i="' + i + '">' +
         '<span class="item-title">' + esc(p.title) + '</span><span class="item-note">' + esc(p.note) + '</span></a>';
     }).join('');
-    Array.prototype.forEach.call(document.querySelectorAll('#projects .item'), function (a) {
-      var p = projects[+a.getAttribute('data-i')];
-      var src = p.preview || (p.images && p.images[0] && p.images[0].image);
-      function on() { if (src) { prevImg.src = src; prev.classList.add('show'); } }
-      function off() { prev.classList.remove('show'); }
-      a.addEventListener('mouseenter', on); a.addEventListener('focus', on);
-      a.addEventListener('mouseleave', off); a.addEventListener('blur', off);
-    });
 
     $('#books').innerHTML = (site.books || []).map(function (b) {
       var inner = '<span class="item-title">' + esc(b.title) + '</span><span class="item-note">' + esc(b.note) + '</span>';
@@ -147,13 +147,13 @@
     function open(i, push) {
       show(i);
       viewer.hidden = false;
-      document.body.classList.add('lock');
+      document.documentElement.classList.add('lock');
       if (push) history.pushState({ img: cur }, '', '#' + (cur + 1));
       $('#v-back').focus({ preventScroll: true });
     }
     function close(fromHistory) {
       viewer.hidden = true;
-      document.body.classList.remove('lock');
+      document.documentElement.classList.remove('lock');
       if (!fromHistory && location.hash) history.back();
       if (lastBtn) lastBtn.focus({ preventScroll: true });
     }
