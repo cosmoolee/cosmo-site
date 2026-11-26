@@ -37,6 +37,21 @@
   var ICON_BOOK = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H19v-3"/><path d="M8 7h7"/></svg>';
   var ICON_CAMERA = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>';
 
+  // small image on a project / statement page: the project's own one, else the default
+  function projectEmblem(site, p) {
+    return (p && p.emblem) || (site.emblems && site.emblems[0] && site.emblems[0].image) || '';
+  }
+  // captioned images first, then the batch-added ones that are not already in that list
+  function projectImages(p) {
+    var list = (p.images || []).filter(function (x) { return x && x.image; });
+    var used = {};
+    list.forEach(function (x) { used[x.image] = 1; });
+    (p.more_images || []).forEach(function (src) {
+      if (src && !used[src]) { used[src] = 1; list.push({ image: src }); }
+    });
+    return list;
+  }
+
   /* ---------------- HOME ---------------- */
   function renderHome(site, data) {
     $('#name').innerHTML = nameBlock(site);
@@ -50,16 +65,7 @@
       emImg.src = emblems[ei].image;
       emBtn.setAttribute('aria-label', 'Change the small image (now: ' + (emblems[ei].label || '') + ')');
     }
-    // background/text colour: unchanged until the first click, then
-    // navy -> dark green -> black -> back to the original white, and repeat
-    var THEMES = ['', 'theme-navy', 'theme-green', 'theme-black'];
-    var ti = 0;
-    emBtn.addEventListener('click', function () {
-      ei = (ei + 1) % emblems.length; showEmblem();
-      if (THEMES[ti]) document.documentElement.classList.remove(THEMES[ti]);
-      ti = (ti + 1) % THEMES.length;
-      if (THEMES[ti]) document.documentElement.classList.add(THEMES[ti]);
-    });
+    emBtn.addEventListener('click', function () { ei = (ei + 1) % emblems.length; showEmblem(); });
     showEmblem();
 
     $('#contact').href = 'mailto:' + (site.email || '');
@@ -91,10 +97,10 @@
     document.title = p.title + ' — ' + (site.name || 'Cosmo');
     $('#name').innerHTML = nameBlock(site);
     $('#emblem').href = '/statement.html?p=' + encodeURIComponent(p.slug);
-    $('#emblem img').src = (site.emblems && site.emblems[0] && site.emblems[0].image) || '';
+    $('#emblem img').src = projectEmblem(site, p);
     $('#title').textContent = p.title + (p.year ? ' [' + p.year + ']' : '');
 
-    var imgs = p.images || [];
+    var imgs = projectImages(p);
     function cap(im, i) {
       var bits = [im.place, im.date].filter(Boolean).join(', ');
       return pad(i + 1) + '   ' + bits;
@@ -201,7 +207,7 @@
     document.title = 'Statement — ' + p.title + ' — ' + (site.name || 'Cosmo');
     $('#name').innerHTML = nameBlock(site);
     $('#emblem').href = '/project.html?p=' + encodeURIComponent(p.slug);
-    $('#emblem img').src = (site.emblems && site.emblems[0] && site.emblems[0].image) || '';
+    $('#emblem img').src = projectEmblem(site, p);
     $('#h-title').textContent = p.title;
     $('#h-year').textContent = p.year || '';
     var st = p.statement || {};

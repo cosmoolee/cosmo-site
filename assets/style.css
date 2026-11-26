@@ -1,6 +1,6 @@
 /* Cosmo — site styles. Colours and fonts are set once here. */
 :root {
-  --ink: #6E1423;          /* wine red text */
+  --ink: #9A2236;          /* wine red text (brighter) */
   --bg: #FFFFFF;
   --hand: 'La Belle Aurore', cursive;
   --serif: 'Libre Caslon Text', Georgia, serif;
@@ -10,11 +10,6 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--ink); }
-/* home-page colour themes, switched by clicking the small image */
-html, body { transition: background-color .4s ease, color .4s ease; }
-html.theme-navy  { --bg: #0F1E3D; --ink: #FFFFFF; }
-html.theme-green { --bg: #133324; --ink: #FFFFFF; }
-html.theme-black { --bg: #000000; --ink: #FFFFFF; }
 body { -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 4px; }
