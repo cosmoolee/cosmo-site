@@ -2,7 +2,7 @@
 # 部署时只需要改下面 repo 这一行：把 YOUR-GITHUB-NAME 换成你的 GitHub 用户名。
 backend:
   name: github
-  repo: YOUR-GITHUB-NAME/cosmo-site
+  repo: cosmoolee/cosmo-site
   branch: main
 
 # 上传的图片存到网站的 images 文件夹
